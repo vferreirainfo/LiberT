@@ -14,6 +14,6 @@ public class Hotel {
     int clavierPrimaire;
     String nomHotel;
     Adresse adresseHotel;
-    
+    int a;
     
 }
