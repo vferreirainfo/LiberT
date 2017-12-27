@@ -11,6 +11,7 @@ package LiberT;
  */
 public class Adresse {
     
+    int a;
     int idAdresse;
     String lieuAdresse;
     int nombrePorte;
