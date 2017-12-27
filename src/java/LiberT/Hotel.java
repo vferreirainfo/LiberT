@@ -11,6 +11,9 @@ package LiberT;
  */
 public class Hotel {
 
+    
+    int test;
+    
     int clavierPrimaire;
     String nomHotel;
     Adresse adresseHotel;
