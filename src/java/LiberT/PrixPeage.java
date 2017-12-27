@@ -12,22 +12,26 @@ package LiberT;
 public class PrixPeage {
     
     
-    int iteneraireID;
-    int prixPeageId;
+    Iteneraire iteneraire;
+    int prixPeageId; 
     int classPeageVoiture;
     float prixPeage;
     int conjIteneraire; // Le conjoint d'iteneraire
     
+    
     public PrixPeage(){}
     
-    public PrixPeage (int iteneraireId, int classPeageVoiture, float prixPeage)
+    public PrixPeage (Iteneraire iteneraireAE, int classPeageVoiture, float prixPeage)
     {
-          this.iteneraireID = iteneraireId;
+          this.iteneraire = iteneraireAE;
           this.classPeageVoiture = classPeageVoiture;
           this.prixPeage = prixPeage;
     }
-    
-    
+   
+    public int ObtenirPrixPeageId()
+    {
+        return prixPeageId;
+    }
     public int ObtenirClassPeageVoiture ()
     {
         return classPeageVoiture;
@@ -44,13 +48,13 @@ public class PrixPeage {
     {
         prixPeage = prix;
     }
-    public int ObtenirIdIteneraire()
+    public Iteneraire ObtenirIdIteneraire()
     {
-        return iteneraireID;
+        return iteneraire;
     }
-    public void DefinirItenerireId(int id)
+    public void DefinirItenerireId(Iteneraire it)
     {
-        iteneraireID = id;
+        iteneraire = it;
     }
     
     public int ObtenirConjIteneraireId()

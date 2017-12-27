@@ -22,13 +22,13 @@ public class Mouvement {
     
     //Il y a jusqu'un mouvement, qui peut être, de ...
     
-    StationService station;  // ça ex: Payment de 40€ de carburant
+    MouvementStationService mouvementSt;  // ça ex: Payment de 40€ de carburant
     Park park; // ou cette ... Um mouvement de Park (payment du stationment de la voiture)
     Restaurant rest; // ou ça
     Hotel hotel; // un client peut être "dormir",  dans une hotel, en une periode de 1/2 nuits, 1 semaine ... Alors, Il va a payer chaque nuit  
     
     
-   
+    
     
     public Mouvement ()
     {}
@@ -41,11 +41,12 @@ public class Mouvement {
     
     }
     
-    public Mouvement(Date dateDuMouvement, Client client, StationService station)
+    
+    public Mouvement(Date dateDuMouvement, Client client, MouvementStationService mvst)
     {
         this.dateDuMouvement = dateDuMouvement;
         this.clId = client;
-        this.station = station;
+        this.mouvementSt = mvst;
     } 
             
     public Mouvement (Date dateDuMouvement, Client client, Park parkStationment)

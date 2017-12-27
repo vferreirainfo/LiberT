@@ -31,6 +31,8 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(LiberT.Client.class);
         resources.add(LiberT.Iteneraire.class);
+        resources.add(ServiceLiberT.ServiceBaseDonees.class);
+        resources.add(ServiceLiberT.ServiceClient.class);
         resources.add(ServiceLiberT.ServiceInteneraire.class);
     }
     

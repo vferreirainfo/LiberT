@@ -86,7 +86,7 @@ public class ServiceInteneraire {
         Connection con; Statement st; ResultSet rs; 
         int beginingTableFieldNumber;
         String driver, url, username, password;
-        String sqlQuery;
+        String sqlQueryClient;
         driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         url = "jdbc:sqlserver://DESKTOP-VUQIPI7;databaseName=vinci-autoroutepeage";
         username = "sa";
@@ -101,11 +101,12 @@ public class ServiceInteneraire {
             Class.forName(driver);
             con = DriverManager.getConnection(url,username,password);
             st=con.createStatement();
+           
             con.commit();
             
             //le query sql
-            sqlQuery = "Select * FROM dbo.itenerario";
-            rs = st.executeQuery(sqlQuery);
+            sqlQueryClient = "Select * FROM dbo.itenerario";
+            rs = st.executeQuery(sqlQueryClient);
             
             while (rs.next())
             {

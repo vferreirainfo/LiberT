@@ -5,6 +5,7 @@
  */
 package LiberT;
 
+import java.util.Date;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -41,15 +42,14 @@ public class Client {
     //Qu est-ce que c'est un Client?
     
     //Un client il y a attributtes:
-    
+    int idClient;
     String prenom;
     String nom;
     String nombreTele;
     String nombreMobile;
     EspeceAdresse adressClient;
-    String nomAdress;
-    int nombrePorte;
-    String code; // 
+    Adresse adresse; 
+    Date dateNaissance;
     
     
     @Context
@@ -59,43 +59,81 @@ public class Client {
     {
     }
     
-    public Client (String premierNom, String nomDeFamilie, String nombreTel, String mobile, EspeceAdresse adressC, int nombreDeLaPorte, String codeDeVille)
+    public Client (String premierNom, String nomDeFamilie, String nombreTel, String mobile, Adresse adresse)
     {
         prenom = premierNom;
         nom = nomDeFamilie;
         nombreTele = nombreTel;
         nombreMobile = mobile;
-        adressClient = adressC;
-        nombrePorte = nombreDeLaPorte;
-        code = codeDeVille;
+        this.adresse = adresse;
     }
     
+    public int ObtenirIdClient()
+    {
+        return idClient;
+    }
+    public void DefinirIdClient(int idClient)
+    {
+        this.idClient = idClient;
+    }
     
-    public String PremierNomClient()
+    public String ObtenirPremierNomClient()
     {
         return prenom;
     }
-    public void PremierNomClient(String preNom)
+    public void DefinirPremierNomClient(String preNom)
     {
         prenom = preNom;
     }
-    public String NomClient()
+    public String ObtenirNomClient()
     {
         return nom;
     }
-    public void NomClient(String nomClient)
+    public void DefinirNomClient(String nomClient)
     {
         nom = nomClient;
     }
-    public String NombreTelephoneClient()
+    public String ObtenirNombreTelephoneClient()
     {
         return nombreTele;
     }
-    public void NombreTelephoneClient(String nombre, boolean regexResult)
+    public void DefinirNombreTelephoneClient(String nombre, boolean regexResult)
     {
         if(regexResult==true)
             nombreTele = nombre;
     }
+    
+    public String ObtenirNombreMobileClient()
+    {
+        return nombreMobile;
+    }
+    public void DefinirNombreMobileClient(String nombreMobile, boolean regexResult)
+    {
+        if(regexResult == true)
+            this.nombreMobile = nombreMobile;
+    }
+    
+    public Date ObtenirDateDeNaissance()
+    {
+        return dateNaissance;
+    }
+    public void DefinirDateDeNaissance(Date ne)
+    {
+        dateNaissance = ne;
+    }
+    
+    public Adresse ObtenirAdresseDuClient()
+    {
+        return adresse;
+    }
+    
+    public void DefinirAdresseDuClient(Adresse ad)
+    {
+        adresse = ad;
+    }
+    
+    
+    
     
     /**
      *
@@ -103,22 +141,7 @@ public class Client {
      * @param expReg
      * @return
      */
-    @GET
-    @Produces("application/text")
-    @Path("Client/get/regex/{nombre}/{regex}")
-    public static boolean ValiderNombreTeleMaison(@PathParam("nombre") String exp,@PathParam("regex") String expReg)
-    {
-        boolean result=false;
-        Pattern p = Pattern.compile(expReg);
-        Matcher m = p.matcher(exp);
-        
-        if(m.find())// encontrou valor
-        {
-            result=true;
-        }
-        return result;
-        
-    }
+    
 
     @GET
     @Produces("application/text")
