@@ -13,33 +13,72 @@ import java.util.Date;
  */
 public class DoneesBancaires {
     
+    int clavierPrimaire;
+    
     // Cette "class" travail avec les DoneesBancaires de chaque Client
-    int nombreNib;
+    long nombreNib;
     
     String banqueNom;
     
     Date dateDAutorization;
     
     
+    Client client;
+    
     public DoneesBancaires(){
         
     }
     
-    public DoneesBancaires(int nombreNIB, String nomBanque,Date autorization)
+    public DoneesBancaires(long nombreNIB, String nomBanque,Date autorization)
     {
         nombreNib = nombreNIB;
         banqueNom = nomBanque;
         dateDAutorization = autorization;
     }
     
+    public int ObtenirClavierPrimaire()
+    {
+        return clavierPrimaire;
+    }
+    public void DefinirClavierPrimaire(int clavierPrimaire)
+    {
+        this.clavierPrimaire = clavierPrimaire;
+    }
     
-    public int NombreDeNIB()
+    
+    public long NombreDeNIB()
     {
         return nombreNib;
     }
-    public void NombreDeNIB(int nombre)
+    public void NombreDeNIB(long nombre)
     {
         nombreNib = nombre;
+    }
+    public String ObtenirNomBanque()
+    {
+        return banqueNom;
+    }
+    public void DefinirNomBanque(String nomBanque)
+    {
+        this.banqueNom = nomBanque;
+    }
+    
+    public Date ObtenirDateDAutorization()
+    {
+        return this.dateDAutorization;
+    }
+    public void DefinirDateDAutorization(Date dtAutorization)
+    {
+        dateDAutorization = dtAutorization;
+    }
+    
+    public Client ObtenirClient()
+    {
+        return client;
+    }
+    public void DefinirClient(Client c)
+    {
+        client=c;
     }
     
     

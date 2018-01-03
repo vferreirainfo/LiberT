@@ -16,7 +16,8 @@ public class MouvementPeage {
     int mouvementPeageId;
     Peage peage;
     PrixPeage prixDuPeage;
-    Date dtMouvement;
+    //Date dtMouvement;
+    String dtMouvement;
     
     public MouvementPeage()
     {
@@ -47,6 +48,15 @@ public class MouvementPeage {
     public void DefinirPrixPeage(PrixPeage prix)
     {
         prixDuPeage = prix;
+    }
+    
+    public String ObtenirDateDuMouvement()
+    {
+        return dtMouvement;
+    }
+    public void DefinirDateDuMouvement(String dt)
+    {
+        dtMouvement = dt;
     }
     
 }

@@ -12,6 +12,7 @@ import java.util.Date;
  * @author Vitor
  */
 
+/*
 enum Marque
 {
     AlfaRomeu,
@@ -70,16 +71,24 @@ enum Marque
     
     
     
-}
+}*/
 public class Voiture {
-    
-    
-    Marque marqueDeVoiture;
-    String modelo; // modifier l'identifieur (nom)
+   
+    int classPeageVoiture;
+    int department;
+    int clavierPrimaireVoiture;
+    String marque;
+    //Marque marqueDeVoiture;
+    String model; // modifier l'identifieur (nom)
     String matriculeVoiture;
-    int peageClass;
-    char codPays;
+    String codPays;
     Date dateImmatriculation;
+    Proprietaire prop;
+    Client client;
+    ConjointVoitures cVoitures;
+    int conjointVoitures;
+    //Object disposifif identifieur
+    
     
     //FK
     int voitureArrayIndex;
@@ -91,40 +100,40 @@ public class Voiture {
         
     }
     
-    public Voiture (Marque marqueV, String model, String matricule)
+    public Voiture (String marqueV, String model, String matricule)
     {
-        marqueDeVoiture = marqueV;
-        modelo = model;
+        marque = marqueV;
+        this.model = model;
         matriculeVoiture = matricule;
     }
     
-    public Marque ObtenirMarque()
+    public int ObtenirClavierPrimaireVoiture()
     {
-        return marqueDeVoiture;
+        return this.clavierPrimaireVoiture;
+    }
+    public void DefinirClavierPrimaireVoiture(int clavier)
+    {
+        clavierPrimaireVoiture = clavier;
     }
     
-    public void MarqueVoiture(Marque m)
+    public String ObtenirMarque()
     {
-        marqueDeVoiture = m;
+        return marque;
+    }
+    
+    public void MarqueVoiture(String marque)
+    {
+        this.marque = marque;
     }
     public String Modelo()
     {
-        return modelo;
+        return model;
     }
     public void ModeloDeVoiture(String mod)
     {
-        modelo=mod;  
+        model=mod;  
     }
     
-    public int VoiturePeageClass()
-    {
-        return peageClass;
-    }
-    
-    public void VoiturePeageClass(int peage)
-    {
-        peageClass = peage;
-    }
     public String ImmatriculationVoiture()
     {
         return matriculeVoiture;
@@ -134,14 +143,54 @@ public class Voiture {
         matriculeVoiture = immatriculation;
     }
     
-    public char PaysDeVoiture()
+    
+    public Date ObtenirDateDImmatriculation()
+    {
+        return dateImmatriculation;
+    }
+    
+    public void DefinirDateDImmatriculation(Date dt)
+    {
+        dateImmatriculation = dt;
+    }
+    
+    public Proprietaire ObtenirProprietaireDeVoiture()
+    {
+        return prop;
+    }
+    public void DefinirProprietaireDeVoiture(Proprietaire prop)
+    {
+        this.prop = prop;
+    }
+    
+    public ConjointVoitures ObtenirConjointVoitures()
+    {
+        return this.cVoitures;
+    }
+    
+    public void DefinirConjointVoitures(ConjointVoitures conjVoitures)
+    {
+        cVoitures = conjVoitures;
+    }
+    
+    public String ObtenirPaysDeVoiture()
     {
         return codPays;
     }
-    
-    public void PaysDeVoiture(char pays)
+    public void DefinirPaysDeVoiture(String paysId)
     {
-        codPays = pays;
+        codPays = paysId;
     }
+    
+    public int ObtenirClassePeageVoiture()
+    {
+        return this.classPeageVoiture;
+    }
+    public void DefinirClassePeageVOiture(int classe)
+    {
+        classPeageVoiture = classe;
+    }
+    
+    
     
 }

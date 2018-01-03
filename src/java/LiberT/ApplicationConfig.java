@@ -6,13 +6,14 @@
 package LiberT;
 
 import java.util.Set;
+import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 /**
  *
  * @author Vitor
  */
-@javax.ws.rs.ApplicationPath("webresources")
+@ApplicationPath("webresources")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -33,7 +34,15 @@ public class ApplicationConfig extends Application {
         resources.add(LiberT.Iteneraire.class);
         resources.add(ServiceLiberT.ServiceBaseDonees.class);
         resources.add(ServiceLiberT.ServiceClient.class);
+        resources.add(ServiceLiberT.ServiceDoneesBancaires.class);
+        resources.add(ServiceLiberT.ServiceHotel.class);
         resources.add(ServiceLiberT.ServiceInteneraire.class);
+        resources.add(ServiceLiberT.ServiceMouvement.class);
+        resources.add(ServiceLiberT.ServiceMouvementPeage.class);
+        resources.add(ServiceLiberT.ServicePark.class);
+        resources.add(ServiceLiberT.ServicePrixPeage.class);
+        resources.add(ServiceLiberT.ServiceStationService.class);
+        resources.add(ServiceLiberT.ServiceVoiture.class);
     }
     
 }

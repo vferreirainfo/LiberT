@@ -70,7 +70,7 @@ public class ServiceClient {
         
         //List de clients et un client individuel
         Client clientIndividuel = new Client();
-        GestionMethodesClient gs;
+        GestionMethodesClient gs = new GestionMethodesClient();
         List<Client> client = new ArrayList<Client>();
         String exMessage="";
         boolean etat=false;
@@ -107,6 +107,11 @@ public class ServiceClient {
                nombreTelephoneMobile = rs.getInt("nombreTelMobile");
                courrier = rs.getString("email");
                nombreFiscaux = rs.getInt("nombreFiscaux");
+               clientIndividuel.DefinirIdClient(pclavier);
+               clientIndividuel.DefinirPremierNomClient(premierNom);
+               clientIndividuel.DefinirNomClient(dernierNom);
+               clientIndividuel.DefinirDateDeNaissance(dateNaissance);
+               
                fkAdresse = rs.getInt("Adresse_adressId");
                while(rsI.next())
                {
@@ -128,16 +133,15 @@ public class ServiceClient {
                    }
                }
                
-               clientIndividuel.DefinirIdClient(pclavier);
-               clientIndividuel.DefinirPremierNomClient(premierNom);
-               clientIndividuel.DefinirNomClient(dernierNom);
-               clientIndividuel.DefinirDateDeNaissance(dateNaissance);
                
                
                client.add(clientIndividuel);
+               clientIndividuel = new Client();
+               
             }
-           
             
+            con.close();
+            gs = new GestionMethodesClient(client,exMessage, etat);
         }
         catch(Exception ex)
         {
@@ -145,7 +149,7 @@ public class ServiceClient {
             etat=false;
         }
         
-        gs = new GestionMethodesClient(client,exMessage, etat);
+      
         return gs;
         
     }

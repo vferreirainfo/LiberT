@@ -16,6 +16,7 @@ public class StationService {
     String nomStationService;
     Adresse adresse;
     String email;
+    int nombreTelephone;
     
     public StationService()
     {
@@ -33,6 +34,10 @@ public class StationService {
     public int ObtenirLeClavierPrimaire()
     {
         return sserviceId;
+    }
+    public void DefinirClavierPrimaire (int clavierPrimaire)
+    {
+        sserviceId = clavierPrimaire;
     }
     
     public String ObtenirNomStationService()
@@ -59,6 +64,14 @@ public class StationService {
     public void DefinirLeCourrierElectronique(String courrier)
     {
         email = courrier;
+    }
+    public int ObtenirNombreTelephone()
+    {
+        return nombreTelephone;
+    }
+    public void DefinirNombreTelephone(int nombreT)
+    {
+        nombreTelephone=nombreT;
     }
     
 }

@@ -58,6 +58,12 @@ public class GestionMethodesPark {
         excMessage = exc;   
     }
     
+    public GestionMethodesPark (String exc, boolean etatMethod)
+    {
+        excMessage = exc;   
+        etat = etatMethod;
+    }
+    
     public boolean ObtenirActuelMethodEtat()
     {
         return etat;

@@ -52,6 +52,12 @@ public class GestionMethodesHotel {
         excMessage = exc;
     }
     
+    public GestionMethodesHotel(String exc, boolean etatMethod)
+    {
+        excMessage = exc;
+        etat = etatMethod;
+    }
+    
     
     public Hotel ObtenirUnHotel()
     {

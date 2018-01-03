@@ -32,6 +32,10 @@ public class PrixPeage {
     {
         return prixPeageId;
     }
+    public void DefinirPrixPeageId(int id)
+    {
+        prixPeageId=id;
+    }
     public int ObtenirClassPeageVoiture ()
     {
         return classPeageVoiture;

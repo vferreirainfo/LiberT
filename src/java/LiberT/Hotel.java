@@ -12,7 +12,7 @@ package LiberT;
 public class Hotel {
 
     
-    int test;
+ 
     
     int clavierPrimaire;
     String nomHotel;
@@ -38,6 +38,10 @@ public class Hotel {
     {
         return clavierPrimaire;
     }
+    public void DefinirClavierPrimaire(int pk)
+    {
+        clavierPrimaire=pk;
+    }
     
     public String ObtenirNomHotel()
     {
@@ -54,5 +58,22 @@ public class Hotel {
     public void DefinirLAdresse(Adresse adresse)
     {
         adresseHotel = adresse;
+    }
+    
+    public String ObtenirLeCourrierElectronique()
+    {
+        return courrier;
+    }
+    public void DefinirLeCourrierElectronique(String courrierElectronique)
+    {
+        courrier = courrierElectronique;
+    }
+    public int ObtenirNombreTelephone()
+    {
+        return nombreTelephon;
+    }
+    public void DefinirNombreTelephone(int nombreTel)
+    {
+        this.nombreTelephon = nombreTel;
     }
 }

@@ -120,8 +120,8 @@ public class ServiceInteneraire {
                 {
                     boolean giveResult = true;
                     route.DefinirAutoRoute(ae, giveResult);
-                    route.DefinirLieuParti(partiPeage, giveResult);
-                    route.DefinirLieuDArrive(arrivePeage, giveResult);
+                    route.DefinirLieuParti(partiPeage);
+                    route.DefinirLieuDArrive(arrivePeage);
                     
                 }
                 

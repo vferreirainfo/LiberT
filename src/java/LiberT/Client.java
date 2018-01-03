@@ -35,6 +35,12 @@ enum EspeceAdresse
     Boulevard,
 }
 
+enum EspeceClient
+{
+    Particulier,
+    Enterprise,
+}
+
 @Path("Client")
 public class Client {
     
@@ -45,12 +51,14 @@ public class Client {
     int idClient;
     String prenom;
     String nom;
-    String nombreTele;
-    String nombreMobile;
+    int nombreTele;
+    int nombreMobile;
     EspeceAdresse adressClient;
     Adresse adresse; 
     Date dateNaissance;
-    
+    String courrier;
+    int nombreFiscaux;
+    EspeceClient espClient;
     
     @Context
     private UriInfo context;
@@ -59,7 +67,7 @@ public class Client {
     {
     }
     
-    public Client (String premierNom, String nomDeFamilie, String nombreTel, String mobile, Adresse adresse)
+    public Client (String premierNom, String nomDeFamilie, int nombreTel, int mobile, Adresse adresse)
     {
         prenom = premierNom;
         nom = nomDeFamilie;
@@ -93,24 +101,22 @@ public class Client {
     {
         nom = nomClient;
     }
-    public String ObtenirNombreTelephoneClient()
+    public int ObtenirNombreTelephoneClient()
     {
         return nombreTele;
     }
-    public void DefinirNombreTelephoneClient(String nombre, boolean regexResult)
+    public void DefinirNombreTelephoneClient(int nombre)
     {
-        if(regexResult==true)
-            nombreTele = nombre;
+        nombreTele = nombre;
     }
     
-    public String ObtenirNombreMobileClient()
+    public int ObtenirNombreMobileClient()
     {
         return nombreMobile;
     }
-    public void DefinirNombreMobileClient(String nombreMobile, boolean regexResult)
+    public void DefinirNombreMobileClient(int nombreMobile)
     {
-        if(regexResult == true)
-            this.nombreMobile = nombreMobile;
+        this.nombreMobile = nombreMobile;
     }
     
     public Date ObtenirDateDeNaissance()
@@ -133,7 +139,30 @@ public class Client {
     }
     
     
-    
+    public String ObtenirCourrierEletronique()
+    {
+        return courrier;
+    }
+    public void DefinirCourrierEletronique(String courrier)
+    {
+        this.courrier = courrier;
+    }
+    public int ObtenirNombreFiscaux()
+    {
+        return nombreFiscaux;
+    }
+    public void DefinirNombreFiscaux(int nombre)
+    {
+        this.nombreFiscaux=nombre;
+    }
+    public EspeceClient ObtenirEspeceClient()
+    {
+        return espClient;
+    }
+    public void DefinirEspeceClient(EspeceClient esp)
+    {
+        espClient = esp;
+    }
     
     /**
      *

@@ -18,7 +18,7 @@ enum EspecePark
 public class Park {
     
     
-    
+    int idPark;
     Adresse adresse;
     String nomPark;
     String email;
@@ -41,6 +41,14 @@ public class Park {
         esp = espPark;
     }
     
+    public int ObtenirIDPark()
+    {
+        return this.idPark;
+    }
+    public void DefinirIdPark(int id)
+    {
+        idPark = id;
+    }
     public Adresse ObtenirAdresse()
     {
         return adresse;

@@ -30,8 +30,7 @@ public class GestionMethodesStationService {
     //Constructeurs
     
     public GestionMethodesStationService()
-    {
-        
+    {  
     }
     
     public GestionMethodesStationService(StationService service, String excMessage)
@@ -61,25 +60,43 @@ public class GestionMethodesStationService {
         etatDOperation = etat;
     }
     
-     public GestionMethodesStationService (List<StationService> conjSt, String exc, boolean etat)
+    public GestionMethodesStationService (List<StationService> conjSt, String exc, boolean etat)
     {
         stations = conjSt;
         excMessage = exc;
         etatDOperation = etat;
     }
-     
-     public StationService ObtenirStationService()
-     {
+    
+    public GestionMethodesStationService (String exc, boolean etat)
+    {
+        excMessage = exc;
+        etatDOperation = etat; 
+    } 
+    
+    public List<StationService> ObtenirListeStationsService()
+    {
+        return stations;
+    }
+    public void DefinirListeStationsService(List<StationService> listeStService)
+    {
+        stations = listeStService;
+    }
+    public StationService ObtenirStationService()
+    {
          return st;
-     }
-     public String ObtenirExceptionnelMessage()
-     {
+    }
+    public void DefinirStationService (StationService st)
+    {
+        this.st = st;
+    }
+    public String ObtenirExceptionnelMessage()
+    {
          return excMessage;
-     }
-     public void DefinirExceptionnelMessage(String excMessage)
-     {
+    }
+    public void DefinirExceptionnelMessage(String excMessage)
+    {
          this.excMessage = excMessage;
-     }
+    }
      public boolean ObtenirOperationEtat()
      {
          return this.etatDOperation;

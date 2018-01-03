@@ -80,24 +80,17 @@ public class Iteneraire {
     {
         return partiPeage;
     }
-    public void DefinirLieuParti (String partiPeage, boolean verValue)
+    public void DefinirLieuParti (String partiPeage)
     {
-        if(verValue==true)
-        {
-             this.partiPeage = partiPeage;
-        }
+       this.partiPeage = partiPeage;
     }
     public String ObtenirLieuDArrive()
     {
         return arrivePeage;
     }
-    public void DefinirLieuDArrive(String arrivePeage, boolean verValue)
+    public void DefinirLieuDArrive(String arrivePeage)
     {
-        if(verValue == true)
-        {
-            this.arrivePeage = arrivePeage;
-        }
-        
+       this.arrivePeage = arrivePeage; 
     }
     public int ObtenirIdListeIteneraires()
     {
